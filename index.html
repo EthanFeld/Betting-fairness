@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bettor Coinflip Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bettor Coinflip Simulation</h1>
+        <label for="x">Chance (%) for Side A:</label>
+        <input type="range" id="x" min="0" max="100" value="50" oninput="updateLabel('x', this.value)">
+        <span id="xLabel">50%</span>
+
+        <label for="v">Adjustment Value (v) for Probability:</label>
+        <input type="range" id="v" min="0" max="50" value="0" oninput="updateLabel('v', this.value)">
+        <span id="vLabel">0%</span>
+
+        <label for="rounds">Number of Rounds:</label>
+        <input type="number" id="rounds" min="1" max="1000" value="100">
+
+        <button onclick="runSimulation()">Run Simulation</button>
+
+        <h2>Results</h2>
+        <canvas id="simulationChart" width="600" height="400"></canvas>
+        <p id="finalAmount">Final Amount: </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
